@@ -78,8 +78,23 @@ cardView.forEach(function (card) {
 // Fonctionnalité 7 :
 let nextBtn = document.querySelector('.btn-secondary');
 
-nextBtn.addEventListener('click', function() {
-  let cardContainer = document.querySelector('.album .row');
-  let lastCard = cardContainer.lastElementChild;
-  cardContainer.insertBefore(lastCard, cardContainer.firstElementChild);
+nextBtn.addEventListener('click', function () {
+    let cardContainer = document.querySelector('.album .row');
+    let lastCard = cardContainer.lastElementChild;
+    cardContainer.insertBefore(lastCard, cardContainer.firstElementChild);
 });
+
+// Fonctionnalité 8 :
+
+let leftBtn = document.querySelector('.btn-primary');
+
+leftBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    let cardContainer = document.querySelector('.album .row');
+    let lastCard = cardContainer.firstElementChild;
+    cardContainer.insertBefore(lastCard, cardContainer.lastElementChild.nextSibling);
+
+});
+
+// Fonctionnalité 9 :
+
