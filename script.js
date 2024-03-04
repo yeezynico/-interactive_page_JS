@@ -98,28 +98,23 @@ leftBtn.addEventListener('click', function (event) {
 
 // Fonctionnalité 9 :
 
-let logo = document.querySelector(".navbar-brand");
+let logo = document.querySelector('.navbar-brand');
 
-logo.addEventListener("keypress", function (event) {
-    document.body.classList.remove("col-4", "offset-md-4", "offset-md-8");
-
-    let keyPressed = event.key;
-
-    switch (keyPressed) {
-        case "a":
-            document.body.classList.add("col-4");
-            break;
-        case "y":
-            document.body.classList.add("col-4", "offset-md-4");
-            break;
-        case "p":
-            document.body.classList.add("col-4", "offset-md-8");
-            break;
-        case "b":
-            break;
-
-    }
+logo.addEventListener('keypress', function (event) {
+  if (event.key === 'b') {
+    document.body.classList.remove('col-4', 'offset-md-4', 'offset-md-8');
+  } else if (event.key === 'a') {
+    document.body.classList.remove('offset-md-4', 'offset-md-8');
+    document.body.classList.add('col-4');
+  } else if (event.key === 'y') {
+    document.body.classList.remove('offset-md-8');
+    document.body.classList.add('col-4', 'offset-md-4');
+  } else if (event.key === 'p') {
+    document.body.classList.remove('offset-md-4');
+    document.body.classList.add('col-4', 'offset-md-8');
+  }
 });
+
 
 
 
